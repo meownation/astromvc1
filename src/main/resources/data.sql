@@ -1,0 +1,2 @@
+INSERT INTO daily (prediction_date, astrosign, payload) values ('2022-05-27', 'LEO', 'Leo strong from DB');
+INSERT INTO daily (prediction_date, astrosign, payload) values ('2022-05-27', 'TAURUS', 'TAURUS strong from DB');

@@ -18,6 +18,6 @@ public class DailyHoroscopeServiceImpl implements DailyHoroscopeService{
         //TODO
         //return new DailyHoroscopeResult (date,sign);
         Optional<DailyHoroscopeResult> resultOpt= dailyHoroscopeDao.getDailyHoroscopeResult(date,sign);
-        return resultOpt.orElseThrow();
+        return resultOpt.orElse(new DailyHoroscopeResult(date, sign));
     }
 }

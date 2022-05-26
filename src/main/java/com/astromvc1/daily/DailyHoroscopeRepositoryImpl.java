@@ -22,7 +22,7 @@ public class DailyHoroscopeRepositoryImpl implements DailyHoroscopeDao{
                      FROM daily
                      WHERE prediction_date = ? AND astrosign = ?
                      """;
-         return jdbcTemplate.query(sql,new DailyRowMapper(),date, sign)
+         return jdbcTemplate.query(sql,new DailyRowMapper(),date, sign.toString())
                  .stream()
                  .findFirst();
     }
