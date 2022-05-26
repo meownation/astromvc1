@@ -17,7 +17,7 @@ public class DailyHoroscopeRepositoryImpl implements DailyHoroscopeDao{
 
     @Override
     public Optional<DailyHoroscopeResult> getDailyHoroscopeResult(Date date, AstroSign sign) {
-        String sql = """
+        var sql = """
                      SELECT prediction_date, astrosign, payload
                      FROM daily
                      WHERE prediction_date = ? AND astrosign = ?
