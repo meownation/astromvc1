@@ -19,7 +19,7 @@ public class DailyHoroscopeController {
     public DailyHoroscopeController(DailyHoroscopeService dailyHoroscopeService) {
         this.dailyHoroscopeService = dailyHoroscopeService;
     }
-
+    //AstroSign enum: ["ARIES","TAURUS","GEMINI","CANCER","LEO","VIRGO","LIBRA","SCORPIO","SAGITTARIUS","CAPRICORN","AQUARIUS","PISCES"]
     //example : localhost:8080/daily/taurus
     @GetMapping("/{sign}")
     public DailyHoroscopeResult getDailyHoroscope(@PathVariable String sign){

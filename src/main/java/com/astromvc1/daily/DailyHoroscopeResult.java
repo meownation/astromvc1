@@ -5,7 +5,8 @@ import com.astromvc1.model.AstroSign;
 import java.sql.Date;
 
 public class DailyHoroscopeResult {
-    private String payload;
+    //private int id;
+    private String payload; // mozda description
     private Date date;
     private AstroSign sign;
 
@@ -13,6 +14,11 @@ public class DailyHoroscopeResult {
             this.payload="Ja cu ti policiju poslat";
             this.date=date;
             this.sign=sign;
+    }
+    public DailyHoroscopeResult(Date date, AstroSign sign, String payload){
+        this.payload=payload;
+        this.date=date;
+        this.sign=sign;
     }
 
     @Override
