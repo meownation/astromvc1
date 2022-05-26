@@ -2,11 +2,11 @@ package com.astromvc1.daily;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 
-public class ParagraphRepository implements ParagraphRepositoryDao {
+public class ParagraphRepositoryImpl implements ParagraphRepositoryDao {
 
     private final JdbcTemplate jdbcTemplate;
 
-    public ParagraphRepository(JdbcTemplate jdbcTemplate){
+    public ParagraphRepositoryImpl(JdbcTemplate jdbcTemplate){
         this.jdbcTemplate=jdbcTemplate;
     }
     @Override
