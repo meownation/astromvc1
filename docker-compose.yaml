@@ -1,0 +1,15 @@
+services:
+  postgres:
+    container_name: postgres-astro
+    image: postgres
+    environment:
+      POSTGRES_USER: meow
+      POSTGRES_PASSWORD: nation
+      PGDATA: /data/postgres
+    volumes:
+      - postgres:/data/postgres
+    ports:
+      - "5432:5432"
+    networks:
+      - postgres
+    restart: unless-stopped
