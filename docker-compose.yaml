@@ -1,7 +1,7 @@
 services:
   postgres:
     container_name: postgres1
-    image: postgres
+    image: postgres:10-alpine
     environment:
       POSTGRES_USER: meownation
       POSTGRES_PASSWORD: password123

@@ -4,7 +4,7 @@ app:
       driver-class-name: org.postgresql.Driver
       jdbc-url: jdbc:postgresql://localhost:5432/meownation
       username: meownation
-      password: 'password123'
+      password: password123
       pool-size: 30
 
 server:
