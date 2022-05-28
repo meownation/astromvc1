@@ -26,4 +26,17 @@ public class DailyHoroscopeRepositoryImpl implements DailyHoroscopeDao{
                  .stream()
                  .findFirst();
     }
+
+    @Override
+    public void insertDailyResult(DailyHoroscopeResult dailyHoroscopeResult) {
+        var sql = """
+                INSERT INTO daily(prediction_date, astrosign, payload)
+                VALUES ( ? , ? , ? );
+                  """;
+        jdbcTemplate.update(
+                sql,
+                dailyHoroscopeResult.getDate(),
+                dailyHoroscopeResult.getSign().toString(),
+                dailyHoroscopeResult.getPayload());
+    }
 }

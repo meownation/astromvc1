@@ -20,4 +20,9 @@ public class DailyHoroscopeServiceImpl implements DailyHoroscopeService{
         Optional<DailyHoroscopeResult> resultOpt= dailyHoroscopeDao.getDailyHoroscopeResult(date,sign);
         return resultOpt.orElse(new DailyHoroscopeResult(date, sign));
     }
+
+    @Override
+    public void addDailyResult(DailyHoroscopeResult dailyHoroscopeResult) {
+        dailyHoroscopeDao.insertDailyResult(dailyHoroscopeResult);
+    }
 }

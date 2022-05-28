@@ -15,11 +15,14 @@ public class DailyHoroscopeResult {
             this.date=date;
             this.sign=sign;
     }
-    public DailyHoroscopeResult(Date date, AstroSign sign, String payload){
+    public DailyHoroscopeResult(String payload, Date date, AstroSign sign){
         this.payload=payload;
         this.date=date;
         this.sign=sign;
     }
+
+    public DailyHoroscopeResult() {
+    }// potreban za deserijalizaciju pri postu
 
     @Override
     public String toString() {

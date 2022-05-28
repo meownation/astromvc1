@@ -18,9 +18,10 @@ public class DailyRowMapper implements RowMapper<DailyHoroscopeResult> {
 //                LocalDate.parse(resultSet.getString("release_date"))
 //        );
           return new DailyHoroscopeResult(
+                  resultSet.getString("payload"),
                   Date.valueOf(LocalDate.parse(resultSet.getString("prediction_date"))), // string to LocalDate to sql.Date
-                  AstroSign.valueOf(resultSet.getString("astrosign")),
-                  resultSet.getString("payload")
+                  AstroSign.valueOf(resultSet.getString("astrosign"))
+
 
           );
     }
