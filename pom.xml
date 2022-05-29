@@ -23,7 +23,6 @@
            <artifactId>spring-boot-starter-security</artifactId>
        </dependency>
          -->
-
         <dependency>
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-ui</artifactId>
@@ -34,11 +33,7 @@
            <groupId>org.springframework.boot</groupId>
            <artifactId>spring-boot-starter-web</artifactId>
        </dependency>
-
-
-
-
-       <dependency>
+        <dependency>
            <groupId>org.postgresql</groupId>
            <artifactId>postgresql</artifactId>
            <scope>runtime</scope>
@@ -69,7 +64,6 @@
             <artifactId>flyway-core</artifactId>
             <version>8.5.11</version>
         </dependency>
-
     </dependencies>
 
    <build>
