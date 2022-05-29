@@ -16,15 +16,15 @@ public class DailyHoroscopeServiceImpl implements DailyHoroscopeService{
         this.paragraphService= paragraphService;
     }
     @Override
-    public DailyHoroscopeResult getDailyResult(Date date, AstroSign sign) {
+    public DailyHoroscope getDailyResult(Date date, AstroSign sign) {
         //TODO
         //return new DailyHoroscopeResult (date,sign);
-        Optional<DailyHoroscopeResult> resultOpt= dailyHoroscopeDao.getDailyHoroscopeResult(date,sign);
-        return resultOpt.orElse(new DailyHoroscopeResult(date, sign, paragraphService.generateParagraphs()));
+        Optional<DailyHoroscope> resultOpt= dailyHoroscopeDao.getDailyHoroscopeResult(date,sign);
+        return resultOpt.orElse(new DailyHoroscope(date, sign, paragraphService.generateParagraphs()));
     }
 
     @Override
-    public void addDailyResult(DailyHoroscopeResult dailyHoroscopeResult) {
-        dailyHoroscopeDao.insertDailyResult(dailyHoroscopeResult);
+    public void addDailyResult(DailyHoroscope dailyHoroscope) {
+        dailyHoroscopeDao.insertDailyResult(dailyHoroscope);
     }
 }

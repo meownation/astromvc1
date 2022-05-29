@@ -1,18 +1,23 @@
-CREATE TABLE IF NOT EXISTS daily (
-id BIGSERIAL PRIMARY KEY,
-prediction_date DATE,
-astrosign VARCHAR(15),
-payload VARCHAR(100)
-);
-
 CREATE TABLE IF NOT EXISTS paragraph(
 id BIGSERIAL PRIMARY KEY,
 topic VARCHAR(30),
 text VARCHAR(300)
 );
 
-INSERT INTO daily (prediction_date, astrosign, payload) values ('2022-05-27', 'LEO', 'Leo strong from DB');
-INSERT INTO daily (prediction_date, astrosign, payload) values ('2022-05-27', 'TAURUS', 'TAURUS strong from DB');
+CREATE TABLE IF NOT EXISTS dailyHoroscopes (
+id BIGSERIAL PRIMARY KEY,
+prediction_date DATE,
+astrosign VARCHAR(15),
+topic1 BIGINT,
+topic2 BIGINT,
+topic3 BIGINT,
+FOREIGN KEY(topic1) REFERENCES paragraph(id),
+FOREIGN KEY(topic2) REFERENCES paragraph(id),
+FOREIGN KEY(topic3) REFERENCES paragraph(id)
+);
+
+
+
 
 INSERT INTO paragraph(topic,text) values ('Ljubav', 'Ne razumete partnerov stav o zajedničkom problemu, imate utisak da se nalazite na suprotnim stranama.');
 INSERT INTO paragraph(topic,text) values ('Ljubav', 'Izbegavajte napete situacije u susretu sa voljenom osobom, važno je da među Vama postoje dobre namere.');
@@ -35,4 +40,6 @@ INSERT INTO paragraph(topic,text) values ('Posao', 'Očekujete pozitivan odgovor
 INSERT INTO paragraph(topic,text) values ('Zdravlje', 'U večernjim satima prijaće Vam izlazak, šetnja ili relaksacija.');
 INSERT INTO paragraph(topic,text) values ('Zdravlje', 'Potrudite se da pravilno usmeravate svoju pozitivnu energiju.');
 INSERT INTO paragraph(topic,text) values ('Zdravlje', 'Olakšajte svoju savest, prijaće Vam relaksacija.');
-INSERT INTO paragraph(topic,text) values ('Zdravlje', 'Obratite pažnju na zdraviji način ishrane, izbegavajte neke »loše« navike.')
+INSERT INTO paragraph(topic,text) values ('Zdravlje', 'Obratite pažnju na zdraviji način ishrane, izbegavajte neke »loše« navike.');
+
+INSERT INTO dailyHoroscopes(prediction_date, astrosign, topic1, topic2, topic3) values ('2022-05-30', 'LEO', 3, 3, 3);

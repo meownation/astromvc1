@@ -21,7 +21,7 @@ public class DailyHoroscopeController {
 
     //example: localhost:8080/daily/taurus
     @GetMapping("/{astroSign}")
-    public DailyHoroscopeResult getDailyHoroscope(@Parameter(
+    public DailyHoroscope getDailyHoroscope(@Parameter(
             name =  "astroSign",
             example = "LEO",
             required = true) @PathVariable AstroSign astroSign){
@@ -40,7 +40,7 @@ public class DailyHoroscopeController {
 
     @PostMapping("/add")
     @ResponseStatus(HttpStatus.CREATED)
-    public void postDailyHoroscope(@RequestBody DailyHoroscopeResult dailyHoroscopeResult){
-            dailyHoroscopeService.addDailyResult(dailyHoroscopeResult);
+    public void postDailyHoroscope(@RequestBody DailyHoroscope dailyHoroscope){
+            dailyHoroscopeService.addDailyResult(dailyHoroscope);
     }
 }

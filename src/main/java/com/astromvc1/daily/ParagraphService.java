@@ -4,7 +4,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class ParagraphService {
@@ -14,11 +13,11 @@ public class ParagraphService {
         this.paragraphRepository = paragraphRepository;
     }
 
-    List<Optional<Paragraph>> generateParagraphs(){
-        List<Optional<Paragraph>> lp = new ArrayList<>();
-        lp.add(paragraphRepository.randomParagraph("Posao"));
-        lp.add(paragraphRepository.randomParagraph("Zdravlje"));
-        lp.add(paragraphRepository.randomParagraph("Ljubav"));
+    List<Paragraph> generateParagraphs(){
+        List<Paragraph> lp = new ArrayList<>();
+        lp.add(paragraphRepository.randomParagraph("Posao").get());
+        lp.add(paragraphRepository.randomParagraph("Zdravlje").get());
+        lp.add(paragraphRepository.randomParagraph("Ljubav").get());
         return lp;
     }
 }

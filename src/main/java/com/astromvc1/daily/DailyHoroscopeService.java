@@ -5,6 +5,6 @@ import com.astromvc1.model.AstroSign;
 import java.sql.Date;
 
 public interface DailyHoroscopeService {
-   DailyHoroscopeResult getDailyResult(Date date, AstroSign sign);
-    void addDailyResult(DailyHoroscopeResult dailyHoroscopeResult);
+   DailyHoroscope getDailyResult(Date date, AstroSign sign);
+    void addDailyResult(DailyHoroscope dailyHoroscope);
 }

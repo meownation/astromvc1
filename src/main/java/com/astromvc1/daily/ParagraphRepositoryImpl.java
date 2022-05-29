@@ -3,6 +3,8 @@ package com.astromvc1.daily;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Optional;
 
 @Repository
@@ -40,8 +42,15 @@ public class ParagraphRepositoryImpl implements ParagraphRepositoryDao {
                 ORDER BY RANDOM()
                 LIMIT 1 
                 """;
-        return jdbcTemplate.query(sql,new ParagraphRowMapper(),topic).stream().findFirst();
+        return jdbcTemplate.query(sql,this::mapRow,topic).stream().findFirst();
 
+    }
+    private Paragraph mapRow(ResultSet rs, int rowNum) throws SQLException {
+
+        return new Paragraph(
+                rs.getString("topic"),
+                rs.getString("text")
+        );
     }
 
     @Override
