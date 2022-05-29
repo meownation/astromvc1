@@ -3,6 +3,10 @@ package com.astromvc1.daily;
 import com.astromvc1.model.AstroSign;
 
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class DailyHoroscopeResult {
     //private int id;
@@ -10,8 +14,17 @@ public class DailyHoroscopeResult {
     private Date date;
     private AstroSign sign;
 
-    public DailyHoroscopeResult(Date date, AstroSign sign) {
-            this.payload="Ja cu ti policiju poslat";
+    public DailyHoroscopeResult(Date date, AstroSign sign, List<Optional<Paragraph>> lp) {
+            List<Paragraph> l= new ArrayList<>();
+            StringBuffer buff = new StringBuffer();
+               l= lp.
+                   stream().
+                        filter(Optional::isPresent).
+                        map(Optional::get).collect(Collectors.toList());
+               lp.stream().
+                       filter(Optional::isPresent).
+                       map(Optional::get).forEach(p->buff.append(p.getTopic()).append(": ").append(p.getText()).append(" "));
+            this.payload= buff.toString();
             this.date=date;
             this.sign=sign;
     }

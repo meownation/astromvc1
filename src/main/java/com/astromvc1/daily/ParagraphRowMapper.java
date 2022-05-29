@@ -9,6 +9,10 @@ public class ParagraphRowMapper implements RowMapper<Paragraph> {
 
     @Override
     public Paragraph mapRow(ResultSet rs, int rowNum) throws SQLException {
-        return null;
+
+       return new Paragraph(
+               rs.getString("topic"),
+                rs.getString("text")
+        );
     }
 }

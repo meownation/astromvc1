@@ -2,6 +2,7 @@ package com.astromvc1.daily;
 
 
 import com.astromvc1.model.AstroSign;
+import io.swagger.v3.oas.annotations.Parameter;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,7 +21,10 @@ public class DailyHoroscopeController {
 
     //example: localhost:8080/daily/taurus
     @GetMapping("/{astroSign}")
-    public DailyHoroscopeResult getDailyHoroscope(@PathVariable AstroSign astroSign){
+    public DailyHoroscopeResult getDailyHoroscope(@Parameter(
+            name =  "astroSign",
+            example = "LEO",
+            required = true) @PathVariable AstroSign astroSign){
         // AstroSign astroSign = AstroSign.valueOf(sign.toUpperCase());//enum valueOf requires uppercase
         Date date=Date.valueOf(LocalDate.now()); // sql date = valueOf(LocalDate.now())
         return dailyHoroscopeService.getDailyResult(date,astroSign);

@@ -2,12 +2,10 @@ package com.astromvc1.model;
 
 
 import org.springframework.core.convert.converter.Converter;
-import org.springframework.stereotype.Component;
 
 import java.util.Locale;
 
 // based on https://tedblob.com/spring-requestparam-enum-lowercase/
-@Component
 public class StringToAstroSignEnumConverter implements Converter<String, AstroSign> {
 
     @Override
