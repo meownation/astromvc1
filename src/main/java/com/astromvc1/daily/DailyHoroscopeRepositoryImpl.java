@@ -1,6 +1,7 @@
 package com.astromvc1.daily;
 
 import com.astromvc1.model.AstroSign;
+import com.astromvc1.paragraph.Paragraph;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -22,12 +23,20 @@ public class DailyHoroscopeRepositoryImpl implements DailyHoroscopeDao{
 
     @Override
     public Optional<DailyHoroscope> getDailyHoroscopeResult(Date date, AstroSign sign) {
+        // topic1 2 i 3 su strani kljucevi u dailyHoroscopes, ukazuju na paragraf
         var sql = """
-                     SELECT prediction_date, astrosign, topic1, topic2, topic3
-                     FROM dailyHoroscopes 
-                     JOIN paragraph AS paragraph1 ON topic1=paragraph1.id 
-                     JOIN paragraph AS paragraph2 ON topic2=paragraph2.id 
-                     JOIN paragraph AS paragraph3 ON topic3=paragraph3.id
+                     SELECT d.prediction_date,
+                            d.astrosign, 
+                           p1.text AS p1text, 
+                           p2.text AS p2text, 
+                           p3.text AS p3text, 
+                           p1.topic AS p1topic, 
+                           p2.topic AS p2topic, 
+                           p3.topic AS p3topic
+                     FROM dailyHoroscope d
+                     JOIN paragraph p1 ON d.topic1=p1.id 
+                     JOIN paragraph p2 ON d.topic2=p2.id 
+                     JOIN paragraph p3 ON d.topic3=p3.id
                      WHERE prediction_date = ? AND astrosign = ?
                      """;
          return jdbcTemplate.query(sql,this::mapRow,date, sign.toString())
@@ -37,27 +46,14 @@ public class DailyHoroscopeRepositoryImpl implements DailyHoroscopeDao{
 
     private DailyHoroscope mapRow(ResultSet resultSet, int i) throws SQLException {
         List<Paragraph> l = new ArrayList<>();
-        l.add(new Paragraph("1", resultSet.getString("topic1")));
-        l.add(new Paragraph("2", resultSet.getString("topic2")));
-        l.add(new Paragraph("3", resultSet.getString("topic3")));
+        l.add(new Paragraph(resultSet.getString("p1topic"), resultSet.getString("p1text")));
+        l.add(new Paragraph(resultSet.getString("p2topic"), resultSet.getString("p2text")));
+        l.add(new Paragraph(resultSet.getString("p3topic"), resultSet.getString("p3text")));
         return new DailyHoroscope(
                 Date.valueOf(LocalDate.parse(resultSet.getString("prediction_date"))), // string to LocalDate to sql.Date
                 AstroSign.valueOf(resultSet.getString("astrosign")),
                 l
 
         );
-    }
-
-    @Override
-    public void insertDailyResult(DailyHoroscope dailyHoroscope) {
-        var sql = """
-                INSERT INTO dailyHoroscopes(prediction_date, astrosign, payload)
-                VALUES ( ? , ? , ? );
-                  """;
-        jdbcTemplate.update(
-                sql,
-                dailyHoroscope.getDate(),
-                dailyHoroscope.getSign().toString(),
-                dailyHoroscope.getPayload());
     }
 }

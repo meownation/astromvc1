@@ -1,4 +1,4 @@
-package com.astromvc1.daily;
+package com.astromvc1.paragraph;
 
 public class Paragraph {
     private String topic;

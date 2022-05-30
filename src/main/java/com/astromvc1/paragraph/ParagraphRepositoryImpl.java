@@ -1,4 +1,4 @@
-package com.astromvc1.daily;
+package com.astromvc1.paragraph;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -35,7 +35,7 @@ public class ParagraphRepositoryImpl implements ParagraphRepositoryDao {
     }
 
     @Override
-    public Optional<Paragraph> randomParagraph(String topic) {
+    public Optional<Paragraph> getRandomParagraphByTopic(String topic) {
         var sql = """
                 SELECT topic,text FROM paragraph
                 WHERE topic = ?

@@ -1,4 +1,4 @@
-package com.astromvc1.daily;
+package com.astromvc1.paragraph;
 
 import java.util.Optional;
 
@@ -7,7 +7,7 @@ public interface ParagraphRepositoryDao {
     void deleteParagraph();
     void createParagraph(Paragraph paragraph);
     void updateParagraph();
-    Optional<Paragraph> randomParagraph(String topic);
+    Optional<Paragraph> getRandomParagraphByTopic(String topic);
     void selectParagraphById();
 
 

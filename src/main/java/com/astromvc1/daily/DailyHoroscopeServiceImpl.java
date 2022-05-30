@@ -1,6 +1,7 @@
 package com.astromvc1.daily;
 
 import com.astromvc1.model.AstroSign;
+import com.astromvc1.paragraph.ParagraphService;
 import org.springframework.stereotype.Service;
 
 import java.sql.Date;
@@ -17,14 +18,12 @@ public class DailyHoroscopeServiceImpl implements DailyHoroscopeService{
     }
     @Override
     public DailyHoroscope getDailyResult(Date date, AstroSign sign) {
-        //TODO
-        //return new DailyHoroscopeResult (date,sign);
         Optional<DailyHoroscope> resultOpt= dailyHoroscopeDao.getDailyHoroscopeResult(date,sign);
         return resultOpt.orElse(new DailyHoroscope(date, sign, paragraphService.generateParagraphs()));
     }
 
-    @Override
-    public void addDailyResult(DailyHoroscope dailyHoroscope) {
-        dailyHoroscopeDao.insertDailyResult(dailyHoroscope);
-    }
+//    @Override
+//    public void addDailyResult(DailyHoroscope dailyHoroscope) {
+//        dailyHoroscopeDao.insertDailyResult(dailyHoroscope);
+//    }
 }

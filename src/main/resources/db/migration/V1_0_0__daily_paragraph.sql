@@ -4,7 +4,7 @@ topic VARCHAR(30),
 text VARCHAR(300)
 );
 
-CREATE TABLE IF NOT EXISTS dailyHoroscopes (
+CREATE TABLE IF NOT EXISTS dailyHoroscope (
 id BIGSERIAL PRIMARY KEY,
 prediction_date DATE,
 astrosign VARCHAR(15),
@@ -42,4 +42,4 @@ INSERT INTO paragraph(topic,text) values ('Zdravlje', 'Potrudite se da pravilno 
 INSERT INTO paragraph(topic,text) values ('Zdravlje', 'Olakšajte svoju savest, prijaće Vam relaksacija.');
 INSERT INTO paragraph(topic,text) values ('Zdravlje', 'Obratite pažnju na zdraviji način ishrane, izbegavajte neke »loše« navike.');
 
-INSERT INTO dailyHoroscopes(prediction_date, astrosign, topic1, topic2, topic3) values ('2022-05-30', 'LEO', 3, 3, 3);
+INSERT INTO dailyHoroscopes(prediction_date, astrosign, topic1, topic2, topic3) values ('2022-05-30', 'LEO', 7, 15, 20);
