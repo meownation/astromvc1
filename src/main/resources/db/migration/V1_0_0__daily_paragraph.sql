@@ -42,4 +42,4 @@ INSERT INTO paragraph(topic,text) values ('Zdravlje', 'Potrudite se da pravilno 
 INSERT INTO paragraph(topic,text) values ('Zdravlje', 'Olakšajte svoju savest, prijaće Vam relaksacija.');
 INSERT INTO paragraph(topic,text) values ('Zdravlje', 'Obratite pažnju na zdraviji način ishrane, izbegavajte neke »loše« navike.');
 
-INSERT INTO dailyHoroscopes(prediction_date, astrosign, topic1, topic2, topic3) values ('2022-05-30', 'LEO', 7, 15, 20);
+INSERT INTO dailyHoroscope(prediction_date, astrosign, topic1, topic2, topic3) values ('2022-05-30', 'LEO', 7, 15, 20);

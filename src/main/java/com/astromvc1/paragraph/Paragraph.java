@@ -1,6 +1,7 @@
 package com.astromvc1.paragraph;
 
 public class Paragraph {
+    private long id;
     private String topic;
     private String text;
 
@@ -8,6 +9,13 @@ public class Paragraph {
 
         return text;
     }
+    public long getId() {
+        return id;
+    }
+
+//    public void setId(long id) {
+//        this.id = id;
+//    }
 
     public String getTopic() {
         return topic;
@@ -21,7 +29,8 @@ public class Paragraph {
         this.text = text;
     }
 
-    public Paragraph(String topic,String text) {
+    public Paragraph(Long id,String topic,String text) {
+        this.id=id;
         this.topic= topic;
         this.text = text;
     }

@@ -19,11 +19,12 @@ public class DailyHoroscopeServiceImpl implements DailyHoroscopeService{
     @Override
     public DailyHoroscope getDailyResult(Date date, AstroSign sign) {
         Optional<DailyHoroscope> resultOpt= dailyHoroscopeDao.getDailyHoroscopeResult(date,sign);
-        return resultOpt.orElse(new DailyHoroscope(date, sign, paragraphService.generateParagraphs()));
+        return resultOpt.orElse(save(new DailyHoroscope(date, sign, paragraphService.generateParagraphs())));
     }
 
-//    @Override
-//    public void addDailyResult(DailyHoroscope dailyHoroscope) {
-//        dailyHoroscopeDao.insertDailyResult(dailyHoroscope);
-//    }
+       @Override
+       public DailyHoroscope save(DailyHoroscope dailyHoroscope) {
+       dailyHoroscopeDao.saveDailyResult(dailyHoroscope);
+       return dailyHoroscope;
+    }
 }

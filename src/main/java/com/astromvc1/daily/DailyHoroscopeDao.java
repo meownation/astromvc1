@@ -7,5 +7,6 @@ import java.util.Optional;
 
 public interface DailyHoroscopeDao {
     Optional<DailyHoroscope> getDailyHoroscopeResult(Date date, AstroSign sign);
+    DailyHoroscope saveDailyResult(DailyHoroscope dailyHoroscope);
 
 }

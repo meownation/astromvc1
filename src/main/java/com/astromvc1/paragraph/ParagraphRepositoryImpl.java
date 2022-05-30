@@ -37,7 +37,7 @@ public class ParagraphRepositoryImpl implements ParagraphRepositoryDao {
     @Override
     public Optional<Paragraph> getRandomParagraphByTopic(String topic) {
         var sql = """
-                SELECT topic,text FROM paragraph
+                SELECT id,topic,text FROM paragraph
                 WHERE topic = ?
                 ORDER BY RANDOM()
                 LIMIT 1 
@@ -48,6 +48,7 @@ public class ParagraphRepositoryImpl implements ParagraphRepositoryDao {
     private Paragraph mapRow(ResultSet rs, int rowNum) throws SQLException {
 
         return new Paragraph(
+                rs.getLong("id"),
                 rs.getString("topic"),
                 rs.getString("text")
         );

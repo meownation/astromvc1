@@ -8,12 +8,12 @@ import java.util.List;
 
 public class DailyHoroscope {
     //private int id;
-    private List<Paragraph> dailyHoroscope; // mozda description
+    private List<Paragraph> paragraphs; // mozda description
     private Date date;
     private AstroSign sign;
 
     public DailyHoroscope(Date date, AstroSign sign, List<Paragraph> lp) {
-            this.dailyHoroscope=lp;
+            this.paragraphs=lp;
             this.date=date;
             this.sign=sign;
     }
@@ -24,18 +24,18 @@ public class DailyHoroscope {
     @Override
     public String toString() {
         return "DailyHoroscopeResult{" +
-                "payload='" + dailyHoroscope + '\'' +
+                "payload='" + paragraphs + '\'' +
                 ", date=" + date +
                 ", sign=" + sign +
                 '}';
     }
 
-    public List<Paragraph> getDailyHoroscope() {
-        return dailyHoroscope;
+    public List<Paragraph> getParagraphs() {
+        return paragraphs;
     }
 
     public void setDailyHoroscope(List<Paragraph> list) {
-        this.dailyHoroscope=list;
+        this.paragraphs=list;
     }
 
     public Date getDate() {
