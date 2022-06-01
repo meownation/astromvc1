@@ -65,7 +65,7 @@ public class DailyHoroscopeRepositoryImpl implements DailyHoroscopeDao{
     public DailyHoroscope save(DailyHoroscope dailyHoroscope) {
         var sql = """
                 INSERT INTO dailyHoroscope(prediction_date, astrosign, topic1, topic2, topic3)
-                VALUES ( ? , ? , ? , ? , ? );
+                VALUES ( ? , ? , ? , ? , ? )
                   """;
         jdbcTemplate.update(
                 sql,
@@ -76,5 +76,14 @@ public class DailyHoroscopeRepositoryImpl implements DailyHoroscopeDao{
                 dailyHoroscope.getParagraphs().get(2).getId()//topic3
         );
         return dailyHoroscope;
+    }
+
+    public void delete(LocalDate date, AstroSign astroSign){
+        Date sqldate =Date.valueOf(date);
+        var sql = """
+                DELETE FROM dailyHoroscope 
+                WHERE prediction_date = ? AND astrosign = ?        
+                """;
+        jdbcTemplate.update(sql, sqldate, astroSign.toString());
     }
 }

@@ -3,10 +3,8 @@ package com.astromvc1.daily;
 
 import com.astromvc1.model.AstroSign;
 import io.swagger.v3.oas.annotations.Parameter;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.web.bind.annotation.*;
 
 import java.sql.Date;
 import java.time.LocalDate;
@@ -33,6 +31,12 @@ public class DailyHoroscopeController {
     @GetMapping
     public AstroSign[] getAllSigns(){
         return AstroSign.values();
+    }
+
+    @DeleteMapping("/{astroSign}")
+    public void deleteDailyHoroscope(@PathVariable AstroSign astroSign,
+                                     @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date){
+        dailyHoroscopeService.deleteHoroscope(date,astroSign);
     }
 
 //    @PostMapping("/add")
