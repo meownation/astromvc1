@@ -26,7 +26,7 @@ public class DailyHoroscopeController {
             required = true) @PathVariable AstroSign astroSign){
         // AstroSign astroSign = AstroSign.valueOf(sign.toUpperCase());//enum valueOf requires uppercase
         Date date=Date.valueOf(LocalDate.now()); // sql date = valueOf(LocalDate.now())
-        return dailyHoroscopeService.getDailyResult(date,astroSign);
+        return dailyHoroscopeService.getDailyHoroscope(date,astroSign);
     }
     //example: localhost:8080/daily/
     //ARIES, TAURUS, GEMINI, CANCER, LEO, VIRGO, LIBRA, SCORPIO, SAGITTARIUS, CAPRICORN, AQUARIUS, PISCES, UNKNOWN

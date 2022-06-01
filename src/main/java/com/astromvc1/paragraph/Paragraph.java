@@ -37,4 +37,13 @@ public class Paragraph {
 
     public Paragraph() {
     }
+
+    @Override
+    public String toString() {
+        return "Paragraph{" +
+                "id=" + id +
+                ", topic='" + topic + '\'' +
+                ", text='" + text + '\'' +
+                '}';
+    }
 }

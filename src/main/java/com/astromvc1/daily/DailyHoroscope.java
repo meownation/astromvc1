@@ -23,8 +23,8 @@ public class DailyHoroscope {
 
     @Override
     public String toString() {
-        return "DailyHoroscopeResult{" +
-                "payload='" + paragraphs + '\'' +
+        return "DailyHoroscope{" +
+                "paragraphs size=" + paragraphs.toString() +
                 ", date=" + date +
                 ", sign=" + sign +
                 '}';

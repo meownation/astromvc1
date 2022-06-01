@@ -12,7 +12,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-@Repository
+@Repository("postgres")
 public class DailyHoroscopeRepositoryImpl implements DailyHoroscopeDao{
 
     private final JdbcTemplate jdbcTemplate;
@@ -22,7 +22,7 @@ public class DailyHoroscopeRepositoryImpl implements DailyHoroscopeDao{
     }
 
     @Override
-    public Optional<DailyHoroscope> getDailyHoroscopeResult(Date date, AstroSign sign) {
+    public Optional<DailyHoroscope> readDailyHoroscope(Date date, AstroSign sign) {
         // topic1 2 i 3 su strani kljucevi u dailyHoroscopes, ukazuju na paragraf
         var sql = """
                      SELECT d.prediction_date,
@@ -62,7 +62,7 @@ public class DailyHoroscopeRepositoryImpl implements DailyHoroscopeDao{
 
 
     @Override
-    public DailyHoroscope saveDailyResult(DailyHoroscope dailyHoroscope) {
+    public DailyHoroscope save(DailyHoroscope dailyHoroscope) {
         var sql = """
                 INSERT INTO dailyHoroscope(prediction_date, astrosign, topic1, topic2, topic3)
                 VALUES ( ? , ? , ? , ? , ? );
