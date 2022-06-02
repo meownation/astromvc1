@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.sql.Date;
 import java.time.LocalDate;
+import java.util.Optional;
 
 @RestController
 @RequestMapping(value="/daily")
@@ -35,8 +36,9 @@ public class DailyHoroscopeController {
 
     @DeleteMapping("/{astroSign}")
     public void deleteDailyHoroscope(@PathVariable AstroSign astroSign,
-                                     @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date){
-        dailyHoroscopeService.deleteHoroscope(date,astroSign);
+                                     @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Optional<LocalDate> date){
+
+        dailyHoroscopeService.deleteHoroscope(date.orElseGet(()->LocalDate.now()),astroSign);
     }
 
 //    @PostMapping("/add")

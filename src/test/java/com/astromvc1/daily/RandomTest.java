@@ -28,6 +28,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
@@ -62,11 +63,27 @@ public class RandomTest {
                 ));
     }
 
+
     @BeforeEach
     public void setup() throws Exception {
         this.mockMvc = MockMvcBuilders.webAppContextSetup(this.webApplicationContext).build();
     }
 
+    @Test
+    public void genericContainersMethodsTest() {
+
+        System.out.println(redisContainer.getFirstMappedPort());
+        System.out.println(redisContainer.getContainerId());
+        System.out.println(redisContainer.getContainerInfo());
+        System.out.println(redisContainer.getCommandParts());
+        System.out.println(redisContainer.dependsOn());
+        System.out.println(redisContainer.getCreateContainerCmdModifiers());
+        System.out.println(redisContainer.getEnv());
+        System.out.println(redisContainer.getLivenessCheckPortNumbers());
+        System.out.println(redisContainer.getNetwork());
+        System.out.println(redisContainer.getNetworkMode());
+
+    }
 
     @Test
     void contextLoads() {
@@ -91,24 +108,31 @@ public class RandomTest {
         ;
     }
     @Test
-    public void dailysignpisces() throws Exception {
+    public void dailysignpiscesget() throws Exception {
         this.mockMvc.perform(get("/daily/pisces")).andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE));
 
     }
     @Test
-    public void dailysignleo() throws Exception {
+    public void dailysignleoget() throws Exception {
         this.mockMvc.perform(get("/daily/leo")).andDo(print())
                 .andExpect(status().is2xxSuccessful())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE));
 
     }
     @Test
-    public void dailysignscorpio() throws Exception {
+    public void dailysignscorpioget() throws Exception {
         this.mockMvc.perform(get("/daily/scorpio")).andDo(print())
                 .andExpect(status().is2xxSuccessful())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE));
+
+    }
+    @Test
+    public void dailysignscorpiodelete() throws Exception {
+        this.mockMvc.perform(delete("/daily/scorpio")).andDo(print())
+                .andExpect(status().is2xxSuccessful());
+
 
     }
 
