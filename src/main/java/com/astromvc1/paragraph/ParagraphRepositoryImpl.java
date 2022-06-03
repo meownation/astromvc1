@@ -5,7 +5,10 @@ import org.springframework.stereotype.Repository;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Repository
 public class ParagraphRepositoryImpl implements ParagraphRepositoryDao {
@@ -16,8 +19,13 @@ public class ParagraphRepositoryImpl implements ParagraphRepositoryDao {
         this.jdbcTemplate=jdbcTemplate;
     }
     @Override
-    public void deleteParagraph() {
-
+    public void deleteParagraph(Long id) {
+        var sql= """
+                DELETE FROM paragraph
+                WHERE id = ?
+                
+                """;
+        jdbcTemplate.update(sql,id);
     }
 
     @Override
@@ -45,6 +53,17 @@ public class ParagraphRepositoryImpl implements ParagraphRepositoryDao {
         return jdbcTemplate.query(sql,this::mapRow,topic).stream().findFirst();
 
     }
+
+    @Override
+    public List<Paragraph> getAllParagraphs() {
+        var sql = """
+                SELECT * FROM paragraph
+                LIMIT 100
+              
+                """;
+        return new ArrayList<>(jdbcTemplate.query(sql, this::mapRow));
+    }
+
     private Paragraph mapRow(ResultSet rs, int rowNum) throws SQLException {
 
         return new Paragraph(

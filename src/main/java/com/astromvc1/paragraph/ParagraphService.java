@@ -16,12 +16,17 @@ public class ParagraphService {
     public void storeParagraph(Paragraph paragraph){
         paragraphRepository.createParagraph(paragraph);
     }
-
+    public List<Paragraph> getAllParagraphs(){
+        return paragraphRepository.getAllParagraphs();
+    }
     public List<Paragraph> generateParagraphs(){
         List<Paragraph> lp = new ArrayList<>();
         lp.add(paragraphRepository.getRandomParagraphByTopic("Posao").get());
         lp.add(paragraphRepository.getRandomParagraphByTopic("Zdravlje").get());
         lp.add(paragraphRepository.getRandomParagraphByTopic("Ljubav").get());
         return lp;
+    }
+    public void deleteParagraph(Long id){
+        paragraphRepository.deleteParagraph(id);
     }
 }
