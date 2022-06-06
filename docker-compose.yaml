@@ -23,9 +23,9 @@ services:
       - postgres
     environment:
       - JAVA_OPTS=-Dspring.config.location=file:/config/application.properties
-#     - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/meownation
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/meownation
       - SPRING_DATASOURCE_USERNAME= meownation
-#      - SPRING_DATASOURCE_PASSWORD= password123
+      - SPRING_DATASOURCE_PASSWORD= password123
     volumes:
       - D:\spring\astromvc1\config\:/config/
 
