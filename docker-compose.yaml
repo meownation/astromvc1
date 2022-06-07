@@ -13,6 +13,17 @@ services:
     networks:
       - network
     restart: unless-stopped
+  cache:
+    container_name: redis_container
+    image: redis:6.2-alpine
+    restart: always
+    ports:
+       - '6379:6379'
+    command: redis-server --save 20 1 --loglevel warning --requirepass eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81
+    volumes:
+       - cache:/data
+    networks:
+      - network
   app:
     build: .
     networks:
@@ -21,13 +32,17 @@ services:
       - "8080:8080"
     depends_on:
       - postgres
+      - cache
     environment:
-      - JAVA_OPTS=-Dspring.config.location=file:/config/application.properties
+#      - JAVA_OPTS=-Dspring.config.location=file:/config/application.properties
       - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/meownation
       - SPRING_DATASOURCE_USERNAME= meownation
       - SPRING_DATASOURCE_PASSWORD= password123
-    volumes:
-      - D:\spring\astromvc1\config\:/config/
+      - SPRING_REDIS_HOST=cache
+#      - SPRING_REDIS_PORT=6379
+#      - SPRING_REDIS_PASSWORD= eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81
+#    volumes:
+#      - D:\spring\astromvc1\config\:/config/
 
   pgadmin:
     container_name: pgadmin_container
@@ -46,17 +61,7 @@ services:
     restart: unless-stopped
 
 
-  cache:
-    container_name: redis_container
-    image: redis:6.2-alpine
-    restart: always
-    ports:
-      - '6379:6379'
-    command: redis-server --save 20 1 --loglevel warning --requirepass eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81
-    volumes:
-      - cache:/data
-    networks:
-      - network
+
 volumes:
   cache:
     driver: local

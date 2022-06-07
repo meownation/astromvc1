@@ -119,6 +119,9 @@ public class RandomTest {
         this.mockMvc.perform(get("/daily/leo")).andDo(print())
                 .andExpect(status().is2xxSuccessful())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE));
+        this.mockMvc.perform(get("/daily/leo")).andDo(print())
+                .andExpect(status().is2xxSuccessful())
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE));
 
     }
     @Test

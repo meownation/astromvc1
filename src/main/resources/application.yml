@@ -6,6 +6,10 @@ app:
       username: meownation
       password: password123
       pool-size: 30
+spring:
+  redis:
+#    host: redis_container
+    port: 6379
 
 server:
   error:
