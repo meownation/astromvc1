@@ -25,6 +25,7 @@ services:
     networks:
       - network
   app:
+    container_name: astro_app
     build: .
     networks:
       - network

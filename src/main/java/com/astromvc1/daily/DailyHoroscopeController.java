@@ -35,7 +35,9 @@ public class DailyHoroscopeController {
     }
 
     @DeleteMapping("/{astroSign}")
-    public void deleteDailyHoroscope(@PathVariable AstroSign astroSign,
+    public void deleteDailyHoroscope(@Parameter(name = "astroSign", example = "LEO" , required = true)
+                                     @PathVariable AstroSign astroSign,
+                                     @Parameter(name = "date" , example = "2022-06-06")
                                      @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Optional<LocalDate> date){
 
         dailyHoroscopeService.deleteHoroscope(date.orElseGet(()->LocalDate.now()),astroSign);
