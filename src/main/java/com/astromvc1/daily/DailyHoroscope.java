@@ -4,15 +4,16 @@ import com.astromvc1.model.AstroSign;
 import com.astromvc1.paragraph.Paragraph;
 
 import java.sql.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 public class DailyHoroscope {
     //private int id;
     private List<Paragraph> paragraphs; // mozda description
-    private Date date;
+    private LocalDate date;
     private AstroSign sign;
 
-    public DailyHoroscope(Date date, AstroSign sign, List<Paragraph> lp) {
+    public DailyHoroscope(LocalDate date, AstroSign sign, List<Paragraph> lp) {
             this.paragraphs=lp;
             this.date=date;
             this.sign=sign;
@@ -38,11 +39,11 @@ public class DailyHoroscope {
         this.paragraphs=list;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 

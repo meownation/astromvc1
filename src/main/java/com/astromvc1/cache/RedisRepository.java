@@ -50,7 +50,7 @@ public class RedisRepository implements DailyHoroscopeDao {
     }
 
     @Override
-    public Optional<DailyHoroscope> readDailyHoroscope(Date date, AstroSign sign) {
+    public Optional<DailyHoroscope> readDailyHoroscope(LocalDate date, AstroSign sign) {
         String key=date.toString()+":"+sign.toString();
 
         List<String> topics=template.opsForList().range(key,0,2).stream().collect(Collectors.toList());

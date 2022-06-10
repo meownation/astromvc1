@@ -7,7 +7,7 @@ import java.time.LocalDate;
 import java.util.Optional;
 
 public interface DailyHoroscopeDao {
-    Optional<DailyHoroscope> readDailyHoroscope(Date date, AstroSign sign);
+    Optional<DailyHoroscope> readDailyHoroscope(LocalDate date, AstroSign sign);
     DailyHoroscope save(DailyHoroscope dailyHoroscope);
     void delete(LocalDate date, AstroSign astroSign);
 

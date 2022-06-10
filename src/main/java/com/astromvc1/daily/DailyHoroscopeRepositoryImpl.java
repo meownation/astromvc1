@@ -22,7 +22,8 @@ public class DailyHoroscopeRepositoryImpl implements DailyHoroscopeDao{
     }
 
     @Override
-    public Optional<DailyHoroscope> readDailyHoroscope(Date date, AstroSign sign) {
+    public Optional<DailyHoroscope> readDailyHoroscope(LocalDate date, AstroSign sign) {
+        Date sqldate = Date.valueOf(date);
         // topic1 2 i 3 su strani kljucevi u dailyHoroscopes, ukazuju na paragraf
         var sql = """
                      SELECT d.prediction_date,
@@ -42,7 +43,7 @@ public class DailyHoroscopeRepositoryImpl implements DailyHoroscopeDao{
                      JOIN paragraph p3 ON d.topic3=p3.id
                      WHERE prediction_date = ? AND astrosign = ?
                 """;
-         return jdbcTemplate.query(sql,this::mapRow,date, sign.toString())
+         return jdbcTemplate.query(sql,this::mapRow,sqldate, sign.toString())
                  .stream()
                  .findFirst();
     }
@@ -53,7 +54,7 @@ public class DailyHoroscopeRepositoryImpl implements DailyHoroscopeDao{
         l.add(new Paragraph(resultSet.getLong("p2id"), resultSet.getString("p2topic"), resultSet.getString("p2text")));
         l.add(new Paragraph(resultSet.getLong("p3id"), resultSet.getString("p3topic"), resultSet.getString("p3text")));
         return new DailyHoroscope(
-                Date.valueOf(LocalDate.parse(resultSet.getString("prediction_date"))), // string to LocalDate to sql.Date
+                LocalDate.parse(resultSet.getString("prediction_date")), // string to LocalDate to sql.Date
                 AstroSign.valueOf(resultSet.getString("astrosign")),
                 l
 

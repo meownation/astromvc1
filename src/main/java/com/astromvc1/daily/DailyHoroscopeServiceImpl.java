@@ -5,7 +5,6 @@ import com.astromvc1.paragraph.ParagraphService;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-import java.sql.Date;
 import java.time.LocalDate;
 import java.util.Optional;
 
@@ -27,7 +26,7 @@ public class DailyHoroscopeServiceImpl implements DailyHoroscopeService{
         this.cacheRepository = cacheRepository;
     }
     @Override
-    public DailyHoroscope getDailyHoroscope(Date date, AstroSign sign) {
+    public DailyHoroscope getDailyHoroscope(LocalDate date, AstroSign sign) {
         boolean cacheMiss=false;
         Optional<DailyHoroscope> result= cacheRepository.readDailyHoroscope(date,sign);
         if(result.isEmpty()) {cacheMiss=true; result=primaryRepository.readDailyHoroscope(date,sign);}
