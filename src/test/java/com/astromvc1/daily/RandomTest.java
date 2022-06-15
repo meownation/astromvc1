@@ -115,6 +115,13 @@ public class RandomTest {
 
     }
     @Test
+    public void dailySignPiscesGetWithDate() throws Exception {
+        this.mockMvc.perform(get("/daily/pisces?date=2022-06-21")).andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE));
+
+    }
+    @Test
     public void dailysignleoget() throws Exception {
         this.mockMvc.perform(get("/daily/leo")).andDo(print())
                 .andExpect(status().is2xxSuccessful())

@@ -19,14 +19,12 @@ public class DailyHoroscopeController {
     }
     //example: localhost:8080/daily/taurus
     @GetMapping("/{astroSign}")
-    public DailyHoroscope getDailyHoroscope(@Parameter(name =  "astroSign", example = "LEO", required = true)
-                                                @PathVariable AstroSign astroSign,
-                                            @Parameter(name = "date" , example = "2022-06-06")
+    public DailyHoroscope getDailyHoroscope(@Parameter(name =  "astroSign", example = "LEO", required = true) @PathVariable AstroSign astroSign,
                                             @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Optional<LocalDate> date
     ){
         // AstroSign astroSign = AstroSign.valueOf(sign.toUpperCase());//enum valueOf requires uppercase
 
-        return dailyHoroscopeService.getDailyHoroscope(date.orElseGet(()->LocalDate.now()),astroSign);
+        return dailyHoroscopeService.getDailyHoroscope(date.orElseGet(LocalDate::now),astroSign);
     }
     //example: localhost:8080/daily/
     //ARIES, TAURUS, GEMINI, CANCER, LEO, VIRGO, LIBRA, SCORPIO, SAGITTARIUS, CAPRICORN, AQUARIUS, PISCES, UNKNOWN
