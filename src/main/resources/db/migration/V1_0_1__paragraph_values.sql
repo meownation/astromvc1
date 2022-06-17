@@ -47,7 +47,39 @@ INSERT INTO paragraph(topic,text) values ('Ljubav', 'Partner ima poverenje u va�
 INSERT INTO paragraph(topic,text) values ('Ljubav', 'Delujete zavodljivo i privlačno. Sreća je na vašoj strani, sve dok postoji zajednička želja da sačuvate emotivnu bliskost.');
 INSERT INTO paragraph(topic,text) values ('Ljubav', 'Stvari koje vama izgledaju interesantno, partner posmatra sa određenom dozom nepoverenja i ima drugačiju teoriju.');
 INSERT INTO paragraph(topic,text) values ('Ljubav', 'Moguće je da ste nehotično povredili nečija osećanja, glas savesti vas podseća na iskreno izvinjenje.');
-
+INSERT INTO paragraph(topic,text) values ('Ljubav', 'Ponekad vaš ljubavni život nije dovoljno interesantan i uzbudljiv koliko biste to želeli, ali vi imate dobru volju da to promenite.');
+INSERT INTO paragraph(topic,text) values ('Ljubav', 'Sa druge strane, preterana doza hrabrosti ili emotivne samovolje može da iskomplikuje zajednički život i odnos sa bliskom osobom.');
+INSERT INTO paragraph(topic,text) values ('Ljubav', 'U emotivnom smislu, brinete bez pravog razloga. Voljena osoba trenutno ne želi da vam poverava svoje misli. Sami postupci dovoljno govore o nečijim osećanjima.');
+INSERT INTO paragraph(topic,text) values ('Ljubav', 'Potrebna vam je dobra volja i veliko strpljenje da se uzdržite u nekim reakcijama pred voljenom osobom. Imate različite stavove i viđenja.');
+INSERT INTO paragraph(topic,text) values ('Ljubav', 'Prati vas emotivno zatišje. Utonuli ste u svoj svet ideja i iščekujete promene ili da neko u vama pokrene snažne impulse.');
+INSERT INTO paragraph(topic,text) values ('Ljubav', 'Partner često postavlja pitanja koja u vama podstiču nelagodnost ili loš predosećaj. Suviše strepite od nečije reakcije.');
+INSERT INTO paragraph(topic,text) values ('Ljubav', 'U odabranom društvu i uz nečije emotivne podsticaje, svet oko vas izgleda mnogo bolje i lepše. Opustite se uz blisku osobu.');
+INSERT INTO paragraph(topic,text) values ('Ljubav', 'Umesto da nepotrebno morališete i pridikujete za različite sitnice koje primećujete, potrudite se da ulepšate nečije emotivno raspoloženje.');
+INSERT INTO paragraph(topic,text) values ('Ljubav', 'U susretu sa voljenom osobom upotrebite neki oprobani recept, koji vodi ka novom emotivnom i strasnom zblizavanju. Kao i uvek, dobra volja – čuda čini.');
+INSERT INTO paragraph(topic,text) values ('Ljubav', 'Pažljivije analizirajte voljenu osobu kako biste otkrili nove detalje koji mogu da ispune zajednička očekivanja i potrebe koje imate.');
+INSERT INTO paragraph(topic,text) values ('Ljubav', 'Ako vam je zaista stalo do ljubavnog pomirenja, pružite novu priliku svom partneru. Nije teško pokazati da imate dobre namere.');
+INSERT INTO paragraph(topic,text) values ('Ljubav', 'Budite umerenji u zahtevima prema voljenoj osobi. Prijaće Vam susret sa bliskim prijateljima i nečija pažnja.');
+INSERT INTO paragraph(topic,text) values ('Ljubav', 'Prijaće Vam susret sa bliskom osobom i emotivna pažnja. Učinite sve što je potrebno da ostvarite zajedničko zadovoljstvo.');
+INSERT INTO paragraph(topic,text) values ('Ljubav', 'Sujeta Vas navodi na pogrešan zaključak. Razmislite zbog čega partner deluje nezainteresovano.');
+INSERT INTO paragraph(topic,text) values ('Ljubav', 'Priželjkujete zanimljivije događaje u ljubavnom životu. Susret sa jednom osobom može da Vam popravi raspoloženje.');
+INSERT INTO paragraph(topic,text) values ('Ljubav', 'Partner se žali na Vašu učestalu rasejanost ili zaboravnost. Ispravite na vreme svoje propuste.');
+INSERT INTO paragraph(topic,text) values ('Ljubav', 'Osmislite dobar plan i originalan nastup koji treba da zadovolji blisku osobu. Važno je da napravite dobar izbor u svakom pogledu.');
+INSERT INTO paragraph(topic,text) values ('Ljubav', 'Priuštite svojoj porodici ili voljenoj osobi dobru zabavu. Uz iskrene namere usrećite osobu do koje Vam je stalo.');
+INSERT INTO paragraph(topic,text) values ('Ljubav', 'Neko Vas uzbuđuje ili Vam privlači pažnju, više nego što ste spremni da priznate. Delujete tajanstveno.');
+INSERT INTO paragraph(topic,text) values ('Ljubav', 'Sve više počinje da Vam nedostaje nečije prisustvo ili emotivna pažnja. Nema razloga da potiskujete svoja osećanja i potrebe.');
+INSERT INTO paragraph(topic,text) values ('Ljubav', 'Nema razloga da prikrivate deo priče pred bliskom osobom. Suočavanje sa istinom predstavlja psihološko olakšanje.');
+INSERT INTO paragraph(topic,text) values ('Ljubav', 'Preterana doza hrabrosti ili samovolje, može da iskomplikuje zajednički život i odnos sa bliskom osobom.');
+INSERT INTO paragraph(topic,text) values ('Ljubav', 'Ako vam je zaista stalo do ljubavnog pomirenja, pružite novu priliku svom partneru. Nije teško pokazati da imate dobre namere.');
+INSERT INTO paragraph(topic,text) values ('Ljubav', 'Sujeta Vas navodi na pogrešan zaključak. Razmislite zbog čega partner deluje nezainteresovano.');
+INSERT INTO paragraph(topic,text) values ('Ljubav', 'Priželjkujete zanimljivije događaje u ljubavnom životu. Susret sa jednom osobom može da Vam popravi raspoloženje.');
+INSERT INTO paragraph(topic,text) values ('Ljubav', 'Partner se žali na Vašu učestalu rasejanost ili zaboravnost. Ispravite na vreme svoje propuste.');
+INSERT INTO paragraph(topic,text) values ('Ljubav', 'Osmislite dobar plan i originalan nastup koji treba da zadovolji blisku osobu. Važno je da napravite dobar izbor u svakom pogledu.');
+INSERT INTO paragraph(topic,text) values ('Ljubav', 'Priuštite svojoj porodici ili voljenoj osobi dobru zabavu. Uz iskrene namere usrećite osobu do koje Vam je stalo.');
+INSERT INTO paragraph(topic,text) values ('Ljubav', 'Neko Vas uzbuđuje ili Vam privlači pažnju, više nego što ste spremni da priznate. Delujete tajanstveno.');
+INSERT INTO paragraph(topic,text) values ('Ljubav', 'Sve više počinje da Vam nedostaje nečije prisustvo ili emotivna pažnja. Nema razloga da potiskujete svoja osećanja i potrebe.');
+INSERT INTO paragraph(topic,text) values ('Ljubav', 'Nema razloga da prikrivate deo priče pred bliskom osobom. Suočavanje sa istinom predstavlja psihološko olakšanje.');
+INSERT INTO paragraph(topic,text) values ('Ljubav', 'Preterana doza hrabrosti ili samovolje, može da iskomplikuje zajednički život i odnos sa bliskom osobom.');
+INSERT INTO paragraph(topic,text) values ('Ljubav', 'Neko Vas uzbuđuje ili Vam privlači pažnju, više nego što ste spremni da priznate. Delujete tajanstveno.');
 
 INSERT INTO paragraph(topic,text) values ('Posao', 'Izbegavajte sumnjive okolnosti i pažljivije analizirajte svoje saradnike. Ponekad postoje »skriveni detalji« koji se teže uočavaju.');
 INSERT INTO paragraph(topic,text) values ('Posao', 'Ukoliko Vam je stalo da testirate svoje intelektualne ili praktične sposobnosti, potrebno je da imate precizne ciljeve.');
@@ -88,8 +120,28 @@ INSERT INTO paragraph(topic,text) values ('Posao', 'Imate zanimljive ideje. Blic
 INSERT INTO paragraph(topic,text) values ('Posao', 'Neko potvrđuje vaša očekivanja u poslovnoj saradnji. Važno je da sačuvate prisebnost duha odlučujućem momentu.');
 INSERT INTO paragraph(topic,text) values ('Posao', 'Nema potrebe da žalite za propuštenom prilikom, bliski saradnici neće dozvoliti da trpite zbog sitnih interesa.');
 INSERT INTO paragraph(topic,text) values ('Posao', 'Pravilna informisanost pruža širu mogućnost za dobar izbor i poslovnu afirmaciju. Vaši saradnici imaju dobre ideje.');
-
-
+INSERT INTO paragraph(topic,text) values ('Posao', 'Nalazite se pred novom poslovnom dilemom i potreban vam je nečiji dobar savet. Ne treba da precenjujete svoje mogućnosti. Stalo vam je da održite nivo uspešne saradnje.');
+INSERT INTO paragraph(topic,text) values ('Posao', 'Ukoliko nemate dovoljno interesovanja da se posvetite nekim zamornim temama, budite iskreni i nemojte davati zvanična obećanja. Nedostaje vam bolja koncentracija.');
+INSERT INTO paragraph(topic,text) values ('Posao', 'Bez obzira na vašu intelektualnu snalažljivost i efikasnost, postoje stvari koje se ne uklapaju u vašu poslovnu procenu. Nečija kritika donosi negativan efekat.');
+INSERT INTO paragraph(topic,text) values ('Posao', 'Ako prekršite osnovna poslovna pravila, postoji mogućnost da vam se pripiše veći deo krivice nego što to zaslužujete. Bolje je da svoje obaveze zavrsite na rutinski način.');
+INSERT INTO paragraph(topic,text) values ('Posao', 'Zainteresovani ste za neke savremenije ideje i pokušavate da se rasteretite od napornih obaveza. Pažljivije analizirajte svoje saradnike. Neko vam daje dobar primer o uspešnom poslovanju.');
+INSERT INTO paragraph(topic,text) values ('Posao', 'Teško vam je da se organizujete kada vas saradnici neprekidno ometaju sa različitim zahtevima. Stalo vam je da ostvarite saglasnost oko zajedničkih interesa.');
+INSERT INTO paragraph(topic,text) values ('Posao', 'Koristite stroge kriterijume kako biste maksimalno zaštitili svoje interese u poslovnim pregovorima. Ne treba da se ponašate suviše strogo prema osobi koja ima dobru nameru.');
+INSERT INTO paragraph(topic,text) values ('Posao', 'U poslovnom dijalogu postoje stvari koje ne treba da činite u afektu ili na osnovu prvog impulsa. Neko od saradnika pažljivo analizira vaše ponašanje i donosi ocenu.');
+INSERT INTO paragraph(topic,text) values ('Posao', 'Ponekad sve postaje relativno i podložno iznenadnim promenama i zato nemojte donositi zaključak bez konsultacije sa bliskim saradnicima. Izbegavajte varijantu sve ili ništa.');
+INSERT INTO paragraph(topic,text) values ('Posao', 'Ponekad treba upotrebiti poznato šahovsko pravilo: „taknuto-maknuto“. Saradnici očekuju da delujete dovoljno snalažljivo u različitim situacijama i prilikama.');
+INSERT INTO paragraph(topic,text) values ('Posao', 'Imate dobru nameru, ali postoje iznenadne okolnosti koje vas sputavaju da ostvarite svoje poslovne planove. Bolje je da se zaustavite u nekom kritičnom trenutku.');
+INSERT INTO paragraph(topic,text) values ('Posao', 'Pravilna informisanost pruža širu mogućnost za dobar izbor i poslovnu afirmaciju. Vaši saradnici imaju dobre ideje.');
+INSERT INTO paragraph(topic,text) values ('Posao', 'Neko Vam na indirektan način daje do znanja da svaka usluga ima svoju povratnu cenu i značenje.');
+INSERT INTO paragraph(topic,text) values ('Posao', 'Očekuje Vas pozitivan rasplet događaja pod uslovom da konsultujete prijatelje i sačuvate prisebnost.');
+INSERT INTO paragraph(topic,text) values ('Posao', 'Potrudite se da pravilno razgraničite svoje obaveze od interesa koji Vas vezuju za određene saradnike. Ne treba da trpite nečiju samovolju.');
+INSERT INTO paragraph(topic,text) values ('Posao', 'Tek kada budete spoznali pravu istinu, shvatićete na koji način treba da rešavate svoje poslovno-finansijske dileme.');
+INSERT INTO paragraph(topic,text) values ('Posao', 'Ukoliko ste zainteresovani za nove poslovne izazove, potrebna Vam je dobra procena. Upotrebite »moć sugestije« u pregovorima.');
+INSERT INTO paragraph(topic,text) values ('Posao', 'Ukoliko budete dovoljno efikasni, predstoji Vam novi dobitak i moralna satisfakcija. Nemojte propustiti dobru priliku.');
+INSERT INTO paragraph(topic,text) values ('Posao', 'Dobar izbor proizilazi iz pouzdanih konsultacija. Važno je da u profesionalnom maniru ispunite različita očekivanja.');
+INSERT INTO paragraph(topic,text) values ('Posao', 'Sa par dobrih poteza, možete da učinite više nego Vaši saradnici. Možete da ostvarite svoje namere na različitim stranama.');
+INSERT INTO paragraph(topic,text) values ('Posao', 'Suočavate se sa različitim problemima. Većina saradnika zagovara merila ili uslove koje najbolje poznaje.');
+INSERT INTO paragraph(topic,text) values ('Posao', 'Ukoliko nemate interesovanja da se posvetite nekim zamornim temama, budite iskreni i nemojte davati zvanična obećanja.');
 
 INSERT INTO paragraph(topic,text) values ('Zdravlje', 'U večernjim satima prijaće Vam izlazak, šetnja ili relaksacija.');
 INSERT INTO paragraph(topic,text) values ('Zdravlje', 'Potrudite se da pravilno usmeravate svoju pozitivnu energiju.');
@@ -127,4 +179,15 @@ INSERT INTO paragraph(topic,text) values ('Zdravlje', 'Važno je da pravilno usm
 INSERT INTO paragraph(topic,text) values ('Zdravlje', 'Prijaće vam šetnja i neki vid relaksacije, kao opuštanje.');
 INSERT INTO paragraph(topic,text) values ('Zdravlje', 'Potrebno je da uskladite svoje želje i mogućnosti, izbegavajte preterivanje.');
 INSERT INTO paragraph(topic,text) values ('Zdravlje', 'Nema razloga da se opterećujete novim sumnjama.');
-INSERT INTO paragraph(topic,text) values ('Zdravlje', 'Važno je da uspostavite harmoničan odnos sa okolinom.');
+INSERT INTO paragraph(topic,text) values ('Zdravlje', 'Dobro se osećate.');
+INSERT INTO paragraph(topic,text) values ('Zdravlje', 'Podstičite kod sebe koncentraciju i pozitivno raspoloženje.');
+INSERT INTO paragraph(topic,text) values ('Zdravlje', 'Prijaće Vam kreativan odmor i više sati zdravog sna.');
+INSERT INTO paragraph(topic,text) values ('Zdravlje', 'Izbegavajte depresivno raspoloženje i destruktivno ponašanje.');
+INSERT INTO paragraph(topic,text) values ('Zdravlje', 'Prijaće Vam neka dodatna aktivnost, kao psihološka relaksacija.');
+INSERT INTO paragraph(topic,text) values ('Zdravlje', 'Podstičite kod sebe dobro raspoloženje.');
+INSERT INTO paragraph(topic,text) values ('Zdravlje', 'Izbegavajte loše navike ili depresivno raspoloženje.');
+INSERT INTO paragraph(topic,text) values ('Zdravlje', 'U večernjim satima prijaće Vam izlazak ili šetnja.');
+INSERT INTO paragraph(topic,text) values ('Zdravlje', 'Obratite pažnju na snove.');
+INSERT INTO paragraph(topic,text) values ('Zdravlje', 'Posvetite pažnju stvarima koje Vas duhovno ispunjavaju.');
+INSERT INTO paragraph(topic,text) values ('Zdravlje', 'Obratite pažnju na pravilnu ishranu.');
+
