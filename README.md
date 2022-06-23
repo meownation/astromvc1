@@ -8,5 +8,5 @@ Docker compose spins up the environment with the following containers:
 #### 3. Redis
 #### 4. Pg admin
 
-https://github.com/meownation/astroreport
-contains REST API consumer java application
+https://github.com/meownation/astroreport/tree/master
+contains REST API client java application
